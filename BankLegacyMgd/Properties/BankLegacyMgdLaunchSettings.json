@@ -1,0 +1,13 @@
+{
+  "Profiles": {
+    "Profile1": {
+      "commandName": "Project",
+      "otherSettings": {
+        "EnableSQLDebugging": "True",
+        "EnableUnmanagedDebugging": "True",
+        "EnableRemoteDebugging": "False",
+        "RedirectStdOut": "False"
+      }
+    }
+  }
+}

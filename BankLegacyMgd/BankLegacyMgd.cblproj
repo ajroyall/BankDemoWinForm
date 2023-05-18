@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <ProjectGuid>{343C0FF4-7EFE-4C3F-8145-BE21752697A2}</ProjectGuid>
+    <OutputName>BankLegacyMgd</OutputName>
+    <OutputType>Library</OutputType>
+    <RootNamespace>BankLegacyMgd</RootNamespace>
+    <PreserveCase>True</PreserveCase>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <SQLDirectives>SQL(DBMAN=ODBC) SQL(DB=MFLAB) SQL(DATE=EUR) SQL(TARGETDB=MSSQLSERVER) SQL(BEHAVIOR=ANSI) SQL(AUTOCOMMIT)</SQLDirectives>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <MFDependencyPaths>C:\Users\alwynr\OneDrive - Micro Focus\Documents\BankDemoWinForm MSSQL\BankLegacyMgd\CPY;C:\Users\alwynr\OneDrive - Micro Focus\Documents\BankDemoWinForm MSSQL\BankLegacyMgd\CPY</MFDependencyPaths>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>C:\Micro Focus\VisualStudio\BankDemoWinForm MSSQL\BankDemoWinForm\Loadlib</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <WarningLevel>2</WarningLevel>
+    <MaxError>100</MaxError>
+    <SourceFormat>Variable</SourceFormat>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DebugSymbols>false</DebugSymbols>
+    <WarningLevel>2</WarningLevel>
+    <MaxError>100</MaxError>
+    <SourceFormat>Variable</SourceFormat>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="System" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Text" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CBL\DBANK00P.CBL" />
+    <Compile Include="CBL\DBANK01P.CBL" />
+    <Compile Include="CBL\DBANK02P.CBL" />
+    <Compile Include="CBL\DBANK03P.CBL" />
+    <Compile Include="CBL\DBANK04P.CBL" />
+    <Compile Include="CBL\DBANK05P.CBL" />
+    <Compile Include="CBL\DBANK06P.CBL" />
+    <Compile Include="CBL\DBANK99P.CBL" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CPY\CBANKSAC.CPY" />
+    <None Include="CPY\CBANKSAT.CPY" />
+    <None Include="CPY\CBANKSCS.CPY" />
+    <None Include="CPY\CBANKSTX.CPY" />
+    <None Include="CPY\CBANKVC1.cpy" />
+    <None Include="CPY\CBANKVC2.cpy" />
+    <None Include="CPY\CBANKVC3.cpy" />
+    <None Include="CPY\CBANKVC4.cpy" />
+    <None Include="CPY\CBANKVC5.cpy" />
+    <None Include="CPY\CBANKVC6.cpy" />
+    <None Include="CPY\CBANKVC7.cpy" />
+    <None Include="CPY\CHELP01.cpy" />
+    <None Include="CPY\SQLCA.CPY" />
+    <None Include="CPY\SMLASSEM.cpy" />
+    <None Include="CPY\UDATECC1.CPY" />
+    <None Include="CPY\UDATECC2.CPY" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Micro Focus\Visual COBOL\v1.0\MicroFocus.COBOL.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent />
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

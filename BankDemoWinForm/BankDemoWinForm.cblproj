@@ -1,0 +1,250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C9E7B123-E9E4-4B70-A2F2-3C5BD7E443B6}</ProjectGuid>
+    <OutputName>BankDemoWinForm</OutputName>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <RootNamespace>BankDemoWinForm</RootNamespace>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <PreserveCase>True</PreserveCase>
+    <SQLDirectives>
+    </SQLDirectives>
+    <StartupObject>Main</StartupObject>
+    <MFDependencyPaths>C:\Users\alwynr\OneDrive - Micro Focus\Documents\BankDemoWinForm MSSQL\BankLegacyMgd\CPY;.\</MFDependencyPaths>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>C:\Micro Focus\VisualStudio\BankDemoWinForm MSSQL\BankDemoWinForm\Loadlib</OutputPath>
+    <WarningLevel>2</WarningLevel>
+    <MaxError>100</MaxError>
+    <SourceFormat>Variable</SourceFormat>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <WarningLevel>2</WarningLevel>
+    <MaxError>100</MaxError>
+    <SourceFormat>Variable</SourceFormat>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic">
+      <Name>Microsoft.VisualBasic</Name>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs">
+      <Name>Microsoft.VisualBasic.PowerPacks.Vs</Name>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="MicroFocus.COBOL.DataTypes" />
+    <Import Include="System" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Globalization" />
+    <Import Include="System.Text" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cbl">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cbl">
+      <DependentUpon>About.cbl</DependentUpon>
+    </Compile>
+    <Compile Include="B30.cbl">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="B30.Designer.cbl">
+      <DependentUpon>B30.cbl</DependentUpon>
+    </Compile>
+    <Compile Include="B30new.cbl">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="B30new.Designer.cbl">
+      <DependentUpon>B30new.cbl</DependentUpon>
+    </Compile>
+    <Compile Include="B40.cbl">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="B40.Designer.cbl">
+      <DependentUpon>B40.cbl</DependentUpon>
+    </Compile>
+    <Compile Include="B40new.cbl">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="B40new.Designer.cbl">
+      <DependentUpon>B40new.cbl</DependentUpon>
+    </Compile>
+    <Compile Include="B50.cbl">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="B50.Designer.cbl">
+      <DependentUpon>B50.cbl</DependentUpon>
+    </Compile>
+    <Compile Include="B50new.cbl">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="B50new.Designer.cbl">
+      <DependentUpon>B50new.cbl</DependentUpon>
+    </Compile>
+    <Compile Include="B60.cbl">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="B60.Designer.cbl">
+      <DependentUpon>B60.cbl</DependentUpon>
+    </Compile>
+    <Compile Include="B60new.cbl">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="B60new.Designer.cbl">
+      <DependentUpon>B60new.cbl</DependentUpon>
+    </Compile>
+    <Compile Include="B70.cbl">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="B70.Designer.cbl">
+      <DependentUpon>B70.cbl</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.cbl">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Demo.Designer.cbl">
+      <DependentUpon>Demo.cbl</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPanel.cbl">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorPanel.Designer.cbl">
+      <DependentUpon>ErrorPanel.cbl</DependentUpon>
+    </Compile>
+    <Compile Include="Help.cbl">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help.Designer.cbl">
+      <DependentUpon>Help.cbl</DependentUpon>
+    </Compile>
+    <Compile Include="Info.cbl">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Info.Designer.cbl">
+      <DependentUpon>Info.cbl</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm1.cbl">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm1.Designer.cbl">
+      <DependentUpon>LoginForm1.cbl</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cbl" />
+    <Compile Include="B20Menu.cbl">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="B20Menu.Designer.cbl">
+      <DependentUpon>B20Menu.cbl</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cbl">
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cbl</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="B30.resx">
+      <DependentUpon>B30.cbl</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="B30new.resx">
+      <DependentUpon>B30new.cbl</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="B40.resx">
+      <DependentUpon>B40.cbl</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="B40new.resx">
+      <DependentUpon>B40new.cbl</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="B50.resx">
+      <DependentUpon>B50.cbl</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="B50new.resx">
+      <DependentUpon>B50new.cbl</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="B60.resx">
+      <DependentUpon>B60.cbl</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="B60new.resx">
+      <DependentUpon>B60new.cbl</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="B70.resx">
+      <DependentUpon>B70.cbl</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Demo.resx">
+      <DependentUpon>Demo.cbl</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="B20Menu.resx">
+      <DependentUpon>B20Menu.cbl</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorPanel.resx">
+      <DependentUpon>ErrorPanel.cbl</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Help.resx">
+      <DependentUpon>Help.cbl</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Info.resx">
+      <DependentUpon>Info.cbl</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm1.resx">
+      <DependentUpon>LoginForm1.cbl</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LegacyBankMgd\LegacyBankMgd.cblproj">
+      <Name>LegacyBankMgd</Name>
+      <Project>{89F7CCB9-8DA4-4077-9FBE-EFD05E12B53A}</Project>
+      <Package>{535C04D7-A2A5-47C7-83E0-B340A995CD1F}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Micro Focus\Visual COBOL\v1.0\MicroFocus.COBOL.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

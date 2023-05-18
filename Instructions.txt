@@ -1,0 +1,26 @@
+Bank Demo for Visual COBOL - Windows Forms
+
+Date: January 2012
+Author: Alwyn Royall Technical Consultant at Micro Focus UK
+
+The demonstration is provided on an as-is basis. There are a number of techniques employed within the solution that give working examples of how some tasks are achieved using the Visual COBOL language and employing the .NET Windows Forms solution.
+
+Similar solutions may be developed for Java, under Eclipse and Web Forms (Visual Studio).
+
+This solution utilises the IBM DB2 data platform. All other demonstrations will use MSSQL.
+
+Instructions:
+The full solution is provided in the folder structure. To ensure it works with minimal effort ensure it is unzipped to c:\Micro Focus\Visual Studio and then within a folder BankDemoWinForm.
+
+The Help data is held on a file within a data folder (in the zip), whilst the other data is held on DB2 tables.
+
+The DB2 tables are accessed via ADO and from the MFLAB database. The MFLAB database was provided with the original Bank Demo for CICS etc. The enable this application to work the DB2 tables will need to be installed and set up.
+
+ADO was set up through the Visual COBOL Data connections ADO option. If installed, this can be found on the Start Menu under Mico Focus Visual COBOL or directly searching for: mfconnectioneditor.exe
+
+I hope the demo proves useful.
+
+I am happy to take any questions at alwyn.royall@microfocus.com
+
+
+Best of Luck!!
