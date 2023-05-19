@@ -89,6 +89,8 @@
        end method.
 
        method-id quoteToolStripMenuItem_Click final private.
+       Procedure division using by value sender as object
+                                         e as type System.EventArgs.
            If currentID > Spaces
                DECLARE newForm = new BankDemoWinForm.B70()
                set SELF::Visible = FALSE *> Hide this dialog screen
