@@ -87,73 +87,73 @@
       *> balancesToolStripMenuItem
       *> 
        set balancesToolStripMenuItem::Name to "balancesToolStripMenuItem"
-       set balancesToolStripMenuItem::Size to new System.Drawing.Size(209 26)
+       set balancesToolStripMenuItem::Size to new System.Drawing.Size(224 26)
        set balancesToolStripMenuItem::Text to "Balances"
        invoke balancesToolStripMenuItem::add_Click(new System.EventHandler(self::balanceToolStripMenuItem_Click))
       *> 
       *> moveMoneyToolStripMenuItem
       *> 
        set moveMoneyToolStripMenuItem::Name to "moveMoneyToolStripMenuItem"
-       set moveMoneyToolStripMenuItem::Size to new System.Drawing.Size(209 26)
+       set moveMoneyToolStripMenuItem::Size to new System.Drawing.Size(224 26)
        set moveMoneyToolStripMenuItem::Text to "Move Money"
        invoke moveMoneyToolStripMenuItem::add_Click(new System.EventHandler(self::transferFundsToolStripMenuItem_Click))
       *> 
       *> toolStripSeparator1
       *> 
        set toolStripSeparator1::Name to "toolStripSeparator1"
-       set toolStripSeparator1::Size to new System.Drawing.Size(206 6)
+       set toolStripSeparator1::Size to new System.Drawing.Size(221 6)
       *> 
       *> loanQuoteToolStripMenuItem
       *> 
        set loanQuoteToolStripMenuItem::Name to "loanQuoteToolStripMenuItem"
-       set loanQuoteToolStripMenuItem::Size to new System.Drawing.Size(209 26)
+       set loanQuoteToolStripMenuItem::Size to new System.Drawing.Size(224 26)
        set loanQuoteToolStripMenuItem::Text to "Loan Quote"
        invoke loanQuoteToolStripMenuItem::add_Click(new System.EventHandler(self::quoteToolStripMenuItem_Click))
       *> 
       *> toolStripSeparator2
       *> 
        set toolStripSeparator2::Name to "toolStripSeparator2"
-       set toolStripSeparator2::Size to new System.Drawing.Size(206 6)
+       set toolStripSeparator2::Size to new System.Drawing.Size(221 6)
       *> 
       *> profileToolStripMenuItem
       *> 
        set profileToolStripMenuItem::Name to "profileToolStripMenuItem"
-       set profileToolStripMenuItem::Size to new System.Drawing.Size(209 26)
+       set profileToolStripMenuItem::Size to new System.Drawing.Size(224 26)
        set profileToolStripMenuItem::Text to "Profile"
        invoke profileToolStripMenuItem::add_Click(new System.EventHandler(self::viewDetailsToolStripMenuItem_Click))
       *> 
       *> exitToolStripMenuItem
       *> 
        set exitToolStripMenuItem::Name to "exitToolStripMenuItem"
-       set exitToolStripMenuItem::Size to new System.Drawing.Size(209 26)
+       set exitToolStripMenuItem::Size to new System.Drawing.Size(224 26)
        set exitToolStripMenuItem::Text to "Log Off"
-       invoke exitToolStripMenuItem::add_Click(new System.EventHandler(self::exitToolStripMenuItem_Click))
+       invoke exitToolStripMenuItem::add_Click(new System.EventHandler(self::LogOffMenuItem_Click))
       *> 
       *> toolStripSeparator3
       *> 
        set toolStripSeparator3::Name to "toolStripSeparator3"
-       set toolStripSeparator3::Size to new System.Drawing.Size(206 6)
+       set toolStripSeparator3::Size to new System.Drawing.Size(221 6)
       *> 
       *> helpToolStripMenuItem1
       *> 
        set helpToolStripMenuItem1::Name to "helpToolStripMenuItem1"
-       set helpToolStripMenuItem1::Size to new System.Drawing.Size(209 26)
+       set helpToolStripMenuItem1::Size to new System.Drawing.Size(224 26)
        set helpToolStripMenuItem1::Text to "Help"
-       invoke helpToolStripMenuItem1::add_Click(new System.EventHandler(self::moreInformationToolStripMenuIte_Click))
+       invoke helpToolStripMenuItem1::add_Click(new System.EventHandler(self::helpMenuStrip_click))
       *> 
       *> moreInformationToolStripMenuItem
       *> 
        set moreInformationToolStripMenuItem::Name to "moreInformationToolStripMenuItem"
-       set moreInformationToolStripMenuItem::Size to new System.Drawing.Size(209 26)
+       set moreInformationToolStripMenuItem::Size to new System.Drawing.Size(224 26)
        set moreInformationToolStripMenuItem::Text to "More Information"
-       invoke moreInformationToolStripMenuItem::add_Click(new System.EventHandler(self::moreInformationToolStripMenuI0_Click))
+       invoke moreInformationToolStripMenuItem::add_Click(new System.EventHandler(self::infoMenuStrip_Click))
       *> 
       *> aboutToolStripMenuItem1
       *> 
        set aboutToolStripMenuItem1::Name to "aboutToolStripMenuItem1"
-       set aboutToolStripMenuItem1::Size to new System.Drawing.Size(209 26)
+       set aboutToolStripMenuItem1::Size to new System.Drawing.Size(224 26)
        set aboutToolStripMenuItem1::Text to "About"
-       invoke aboutToolStripMenuItem1::add_Click(new System.EventHandler(self::aboutToolStripMenuItem_Click))
+       invoke aboutToolStripMenuItem1::add_Click(new System.EventHandler(self::aboutMenuStrip_Click))
       *> 
       *> pictureBox1
       *> 
@@ -305,7 +305,6 @@
        set self::Name to "B20Menu"
        set self::Text to "opentext™ - Bank Demo"
        set self::WindowState to type System.Windows.Forms.FormWindowState::Maximized
-       invoke self::add_Load(new System.EventHandler(self::Menu_Load))
        invoke menuStrip1::ResumeLayout(False)
        invoke menuStrip1::PerformLayout
        invoke pictureBox1 as type System.ComponentModel.ISupportInitialize::EndInit

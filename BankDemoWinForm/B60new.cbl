@@ -7,6 +7,7 @@
            88  READ-CONTACT       VALUE "R".
            88  UPDATE-CONTACT     VALUE "W".
        01  currentUser            pic x(5).
+       01  appID                   pic x(6) value "BANK60".
 
        method-id NEW.
        linkage section.
@@ -116,26 +117,6 @@
 
        end method.
 
-      *===================================================================================
-      *= Generic Routines used across all menu driven Programs: Help, Info, About & Exit =
-
-      *>> Press the EXIT menu option
-       method-id exitToolStripMenuItem_Click final private.
-       Procedure division using by value sender as object
-                                         e as type System.EventArgs.
-           invoke self::Close()
-       end method.
-
-      *>> Press the HELP menu option
-       method-id moreInformationToolStripMenuIte_Click final private.
-       01  helpPanel              type BankDemoWinForm.Help.
-       Procedure division using by value sender as object
-                                         e as type System.EventArgs.
-           set helpPanel to new BankDemoWinForm.Help
-           invoke helpPanel::Load("BANK60")
-       end method.
-
-
       *======================================================================================
        method-id buttonUpdate_Click final private.
        procedure division using by value sender as object
@@ -155,5 +136,9 @@
            set buttonUpdate::Visible TO TRUE
            invoke self::Show()
        end method.
+
+      *===================================================================================
+      *= Generic Routines used across all menu driven Programs: Help, Info, About & Exit =
+       copy "GenericMenuOptions.cpy".
 
        end class.

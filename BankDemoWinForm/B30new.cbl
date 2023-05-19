@@ -2,7 +2,7 @@
            inherits type System.Windows.Forms.Form.
 
        working-storage section.
-       01  currentID               pic x(5).
+       01  currentID               PIC x(5).
        01  decValue                DECIMAL.
        01  appID                   PIC X(8) value "BANK30".
        COPY CBANKVC3 .

@@ -4,6 +4,7 @@
        working-storage section.
        01  currentUser            pic x(5).
        01  selectAcc              pic x(9).
+       01  appId                  PIC X(6) Value "BANK40".
 
       *-- Stored outside the methods to allow exchange between diff methods of
       *   the form.i.e. Intial retrieve to Transfer.
@@ -31,7 +32,7 @@
 
            set toolStripStatusLabel1::Text to "Use the Back Arrow to return to Balances"
            goback
-           .
+           
        end method.
 
       *===================================================================================
@@ -78,8 +79,7 @@
            05  AMTN redefines AMT  PIC $$$,$$$,$$$.00+.
 
       * Data as used in the Linkage Section of the Called Program
-       01  BANK-USERNM            PIC X(25).
-00     COPY CBANKVC5.
+       COPY CBANKVC5.
 
        01  BANK-ERRMSG             PIC x(65).
        01  SHOW-DATE               PIC x(10).
@@ -117,9 +117,7 @@
                Perform until CD05O-DATE(Indx) = SPACES
                    IF SHOW-DATE NOT EQUAL CD05O-DATE(Indx)
                        MOVE CD05O-DATE(Indx) to SHOW-DATE
-      *            ELSE
-      *                MOVE SPACES to CD05O-DATE(Indx)
-      *            END-IF
+
                    set listViewItem1 to new System.Windows.Forms.ListViewItem(CD05O-DATE(Indx), 10)
                    set listViewItem1::ForeColor TO type System.Drawing.SystemColors::Highlight
                    invoke listView1::Items::Add(listViewItem1)
@@ -146,50 +144,6 @@
 
        end method.
 
-      *===================================================================================
-      *= Generic Routines used across all menu driven Programs: Help, Info, About & Exit =
-
-      *>> Press the EXIT menu option
-       method-id exitToolStripMenuItem_Click_1 final private.
-       Procedure division using by value sender as object
-                                         e as type System.EventArgs.
-           invoke self::Close()
-       end method.
-
-      *>> Press the HELP menu option
-       method-id moreInformationToolStripMenuIte_Click_1 final private.
-       01  helpPanel              type BankDemoWinForm.Help.
-       Procedure division using by value sender as object
-                                         e as type System.EventArgs.
-           set helpPanel to new BankDemoWinForm.Help
-           invoke helpPanel::Load("BANK40")
-       end method.
-
-      *>> Press the INFO menu option
-       method-id moreInformationToolStripMenuI0_Click_1 final private.
-       01  infoPanel              type BankDemoWinForm.Info.
-       Procedure division using by value sender as object
-                                         e as type System.EventArgs.
-           set infoPanel to new BankDemoWinForm.Info
-           invoke infoPanel::ShowDialog(self)
-       end method.
-
-      *>> Press the ABOUT menu option
-       method-id aboutToolStripMenuItem_Click_1 final private.
-       01  aboutPanel             type BankDemoWinForm.About.
-       Procedure division using by value sender as object
-                                         e as type System.EventArgs.
-           set aboutPanel to new BankDemoWinForm.About
-           invoke aboutPanel::ShowDialog(self)
-       end method.
-
-      *======================================================================================
-
-       method-id button1_Click_1 final private.
-       procedure division using by value sender as object
-                                         e as type System.EventArgs.
-           invoke listView1::Items::Clear() *>> Clear the list View table before re-loading
-           invoke self::transList() *>> Now process the user selection
-       end method.
+       copy "GenericMenuOptions.cpy".
 
        end class.

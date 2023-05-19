@@ -142,7 +142,7 @@
        set pictureBox2::SizeMode to type System.Windows.Forms.PictureBoxSizeMode::StretchImage
        set pictureBox2::TabIndex to 42
        set pictureBox2::TabStop to False
-       invoke pictureBox2::add_Click(new System.EventHandler(self::exitToolStripMenuItem_Click_1))
+       invoke pictureBox2::add_Click(new System.EventHandler(self::exitToolStripMenuItem_Click))
       *> 
       *> tbBalance
       *> 

@@ -24,7 +24,7 @@
        end method.
 
       *>> Press the HELP menu option
-       method-id moreInformationToolStripMenuIte_Click_1 final private.
+       method-id helpMenuStrip_click final private.
        01  helpPanel              type BankDemoWinForm.Help.
        Procedure division using by value sender as object
                                          e as type System.EventArgs.
@@ -33,7 +33,7 @@
        end method.
 
       *>> Press the INFO menu option
-       method-id moreInformationToolStripMenuI0_Click_1 final private.
+       method-id infoMenuStrip_Click final private.
        01  infoPanel              type BankDemoWinForm.Info.
        Procedure division using by value sender as object
                                          e as type System.EventArgs.
@@ -42,7 +42,7 @@
        end method.
 
       *>> Press the ABOUT menu option
-       method-id aboutToolStripMenuItem_Click_1 final private.
+       method-id aboutMenuStrip_Click final private.
        01  aboutPanel             type BankDemoWinForm.About.
        Procedure division using by value sender as object
                                          e as type System.EventArgs.

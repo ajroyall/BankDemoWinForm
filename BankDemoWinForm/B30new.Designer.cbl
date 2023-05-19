@@ -17,6 +17,7 @@
        01 button1 type System.Windows.Forms.Button.
        01 logOffToolStripMenuItem type System.Windows.Forms.ToolStripMenuItem.
        01 helpToolStripMenuItem1 type System.Windows.Forms.ToolStripMenuItem.
+       01 toolStripSeparator1 type System.Windows.Forms.ToolStripSeparator.
        01 components type System.ComponentModel.IContainer.
 
       *> Required method for Designer support - do not modify
@@ -42,6 +43,7 @@
        set statusStrip1 to new System.Windows.Forms.StatusStrip
        set menuStrip1 to new System.Windows.Forms.MenuStrip
        set button1 to new System.Windows.Forms.Button
+       set toolStripSeparator1 to new System.Windows.Forms.ToolStripSeparator
        invoke pictureBox1 as type System.ComponentModel.ISupportInitialize::BeginInit
        invoke statusStrip1::SuspendLayout
        invoke menuStrip1::SuspendLayout
@@ -138,16 +140,16 @@
       *> exitToolStripMenuItem
       *> 
        set exitToolStripMenuItem::Name to "exitToolStripMenuItem"
-       set exitToolStripMenuItem::Size to new System.Drawing.Size(142 26)
+       set exitToolStripMenuItem::Size to new System.Drawing.Size(224 26)
        set exitToolStripMenuItem::Text to "Back"
        invoke exitToolStripMenuItem::add_Click(new System.EventHandler(self::exitToolStripMenuItem_Click))
       *> 
       *> fileToolStripMenuItem
       *> 
-       invoke fileToolStripMenuItem::DropDownItems::AddRange(table of type System.Windows.Forms.ToolStripItem(exitToolStripMenuItem logOffToolStripMenuItem helpToolStripMenuItem1))
+       invoke fileToolStripMenuItem::DropDownItems::AddRange(table of type System.Windows.Forms.ToolStripItem(exitToolStripMenuItem logOffToolStripMenuItem toolStripSeparator1 helpToolStripMenuItem1))
        set fileToolStripMenuItem::Name to "fileToolStripMenuItem"
-       set fileToolStripMenuItem::Size to new System.Drawing.Size(32 24)
-       set fileToolStripMenuItem::Text to "..."
+       set fileToolStripMenuItem::Size to new System.Drawing.Size(38 24)
+       set fileToolStripMenuItem::Text to "....."
       *> 
       *> logOffToolStripMenuItem
       *> 
@@ -159,9 +161,9 @@
       *> helpToolStripMenuItem1
       *> 
        set helpToolStripMenuItem1::Name to "helpToolStripMenuItem1"
-       set helpToolStripMenuItem1::Size to new System.Drawing.Size(142 26)
+       set helpToolStripMenuItem1::Size to new System.Drawing.Size(224 26)
        set helpToolStripMenuItem1::Text to "Help"
-       invoke helpToolStripMenuItem1::add_Click(new System.EventHandler(self::moreInformationToolStripMenuIte_Click_1))
+       invoke helpToolStripMenuItem1::add_Click(new System.EventHandler(self::helpMenuStrip_click))
       *> 
       *> statusStrip1
       *> 
@@ -193,6 +195,11 @@
        set button1::Text to "Refresh"
        set button1::UseVisualStyleBackColor to True
        invoke button1::add_Click(new System.EventHandler(self::Refresh_Click))
+      *> 
+      *> toolStripSeparator1
+      *> 
+       set toolStripSeparator1::Name to "toolStripSeparator1"
+       set toolStripSeparator1::Size to new System.Drawing.Size(221 6)
       *> 
       *> B30new
       *> 

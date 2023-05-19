@@ -178,7 +178,7 @@
       *> exitToolStripMenuItem
       *> 
        set exitToolStripMenuItem::Name to "exitToolStripMenuItem"
-       set exitToolStripMenuItem::Size to new System.Drawing.Size(124 26)
+       set exitToolStripMenuItem::Size to new System.Drawing.Size(224 26)
        set exitToolStripMenuItem::Text to "Back"
        invoke exitToolStripMenuItem::add_Click(new System.EventHandler(self::exitToolStripMenuItem_Click))
       *> 
@@ -192,14 +192,14 @@
       *> toolStripSeparator1
       *> 
        set toolStripSeparator1::Name to "toolStripSeparator1"
-       set toolStripSeparator1::Size to new System.Drawing.Size(121 6)
+       set toolStripSeparator1::Size to new System.Drawing.Size(221 6)
       *> 
       *> helpToolStripMenuItem1
       *> 
        set helpToolStripMenuItem1::Name to "helpToolStripMenuItem1"
-       set helpToolStripMenuItem1::Size to new System.Drawing.Size(124 26)
+       set helpToolStripMenuItem1::Size to new System.Drawing.Size(224 26)
        set helpToolStripMenuItem1::Text to "Help"
-       invoke helpToolStripMenuItem1::add_Click(new System.EventHandler(self::moreInformationToolStripMenuIte_Click))
+       invoke helpToolStripMenuItem1::add_Click(new System.EventHandler(self::helpMenuStrip_click))
       *> 
       *> lBoxTo
       *> 

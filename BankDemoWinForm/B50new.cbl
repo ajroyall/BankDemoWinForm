@@ -2,10 +2,10 @@
            inherits type System.Windows.Forms.Form.
       
        working-storage section.
-       01  currentUser            pic x(5).
+       01  currentUser             PIC X(5).
        01  disCurrency             DECIMAL.
-      *01  strCurrency             STRING.
-       01  Indx                   pic 99.
+       01  Indx                    PIC 99.
+       01  appID                   PIC X(6) VALUE "BANK50".
 
       *-- Stored outside the methods to allow exchange between diff methods of
       *   the form.i.e. Intial retrieve to Transfer.
@@ -79,9 +79,8 @@
            set tbToBalance::Text TO ""
            set tBoxAmount::Text    to ""
            invoke lBoxFrom::Items::Clear() *>> Clear From Acct list
-           invoke lBoxTo::Items::Clear() *>> Clear To Acct list
+           invoke lBoxTo::Items::Clear()   *>> Clear To Acct list
 
-      
       *> Store the Account Codes in the drop down lists (From Account and To Account)
             Perform until CD03O-ACC(Indx) = SPACES OR BANK-ERRMSG > SPACES
               invoke lBoxFrom::Items::AddRange(CD03O-DSC(Indx))
@@ -96,8 +95,6 @@
        local-storage section.
        01  FROM-ACCID             PIC X(9).
        01  TO-ACCID               PIC X(9).
-      
-      * Data as used in the Linkage Section of the Called Program
       
        01  BANK-ERRMSG            PIC X(65).
        01  GOOD-ERRMSG            PIC X(65).
@@ -154,10 +151,7 @@
                    move 2 to Indx
                end-if
 
-      *        invoke lBoxFrom::Items::Clear() *>> Clear From Acct list
-      *        invoke lBoxTo::Items::Clear()   *>> Clear To Acct list
                invoke self::PopulateList()     *>> Refresh List view
-      *        set tBoxAmount::Text            to ""
                set ERRMSG::Text                to GOOD-ERRMSG
                set toolStripStatusLabel1::Text to GOOD-ERRMSG
 
@@ -170,12 +164,8 @@
        method-id selectFrom_Click final private.
        local-storage section.
        01  FROM-DSCID             PIC X(15).
-       01  TO-ACCID               PIC X(15).
        01  bal-str                 STRING.
       
-      * Data as used in the Linkage Section of the Called Program
-      
-       01  BANK-ERRMSG            PIC X(65).
        Procedure division using by value sender as object
                                          e as type System.EventArgs.
       
@@ -203,9 +193,6 @@
        01  TO-DSCID               PIC X(15).
        01  bal-str                STRING.
       
-      * Data as used in the Linkage Section of the Called Program
-      
-       01  BANK-ERRMSG            PIC X(65).
        Procedure division using by value sender as object
                                          e as type System.EventArgs.
       
@@ -227,50 +214,14 @@
                disCurrency::ToString("C", type CultureInfo::CurrentCulture)
        end method.
       
-      *===================================================================================
-      *= Generic Routines used across all menu driven Programs: Help, Info, About & Exit =
-      
-      *>> Press the EXIT menu option
-       method-id exitToolStripMenuItem_Click final private.
-       Procedure division using by value sender as object
-                                         e as type System.EventArgs.
-           invoke self::Close()
-       end method.
-      
-      *>> Press the HELP menu option
-       method-id moreInformationToolStripMenuIte_Click final private.
-       01  helpPanel              type BankDemoWinForm.Help.
-       Procedure division using by value sender as object
-                                         e as type System.EventArgs.
-           set helpPanel to new BankDemoWinForm.Help
-           invoke helpPanel::Load("BANK50")
-       end method.
-      
-      *>> Press the INFO menu option
-       method-id moreInformationToolStripMenuI0_Click final private.
-       01  infoPanel              type BankDemoWinForm.Info.
-       Procedure division using by value sender as object
-                                         e as type System.EventArgs.
-           set infoPanel to new BankDemoWinForm.Info
-           invoke infoPanel::ShowDialog(self)
-       end method.
-      
-      *>> Press the ABOUT menu option
-       method-id aboutToolStripMenuItem_Click final private.
-       01  aboutPanel             type BankDemoWinForm.About.
-       Procedure division using by value sender as object
-                                         e as type System.EventArgs.
-           set aboutPanel to new BankDemoWinForm.About
-           invoke aboutPanel::ShowDialog(self)
-       end method.
-      
-      *======================================================================================
-      
        method-id buttonTransfer_Click final private.
        procedure division using by value sender as object
                                          e as type System.EventArgs.
            invoke self::transferAmt()
        end method.
       
-      
+      *====================================================================================
+      *= Generic Routines used across all menu driven Programs: Help, Info, About & Exit =
+       copy "GenericMenuOptions.cpy".
+     
        end class.
